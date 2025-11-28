@@ -1,0 +1,28 @@
+/* Custom theme tweaks for nicer Bootstrap visuals */
+:root{
+  --brand: #4f46e5; /* indigo-600 */
+  --accent: #06b6d4; /* cyan-500 */
+}
+
+body{ background: linear-gradient(180deg,#f8fafc 0%,#eef2ff 100%); }
+.app-card{ border-radius:1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+.app-navbar{ backdrop-filter: blur(6px); background: rgba(255,255,255,0.72); border-bottom: 1px solid rgba(0,0,0,0.05); }
+.brand { color: var(--brand); font-weight:700; letter-spacing:0.2px; }
+.btn-primary, .btn-primary:focus{ background: var(--brand); border-color: var(--brand); }
+.small-pill{ font-size:0.75rem; padding: .25rem .5rem; border-radius:999px; }
+.muted { color: #6b7280; }
+.table thead th{ background: rgba(79,70,229,0.06); }
+.hover-lift{ transition: transform .18s ease, box-shadow .18s ease; }
+.hover-lift:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(16,24,40,0.08); }
+
+.profile-avatar{ width:48px; height:48px; object-fit:cover; border-radius:999px; border:2px solid rgba(255,255,255,0.85); }
+.profile-avatar{ box-shadow: 0 4px 14px rgba(2,6,23,0.12); }
+.flash{ position:relative; z-index:20; }
+
+@media (prefers-reduced-motion: reduce){ .hover-lift{ transition:none; transform:none; } }
+
+/* Dropdown adjustments to make labels readable */
+.dropdown-menu{ background: #ffffff; color: #0f172a; border-radius: .6rem; padding: .5rem; }
+.dropdown-item{ color: #0f172a; border-radius: .45rem; }
+.dropdown-item:hover, .dropdown-item:focus{ background: rgba(79,70,229,0.06); color: #0b1220; }
+.app-navbar .btn-outline-secondary, .app-navbar .btn-outline-danger{ opacity: .95; }
