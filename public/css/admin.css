@@ -1,0 +1,43 @@
+/* Simple admin theme tweaks */
+.admin-layout #sidebar{
+  width: 260px;
+  min-height: 100vh;
+  transition: width .2s ease;
+}
+.admin-layout #sidebar.collapsed{ width: 64px; }
+.admin-layout #sidebar.collapsed .sidebar-content,
+.admin-layout #sidebar.collapsed .sidebar-footer{
+  display: none;
+}
+.admin-layout #sidebar .nav-link i{ width:28px; display:inline-block; text-align:center }
+.admin-layout #sidebar .nav-link{ display:flex; align-items:center }
+.admin-layout #sidebar .nav-link span{ flex:1 }
+.admin-layout #sidebar .nav-link{ color:#495057; }
+.admin-layout #sidebar .nav-link.active{ background:#f8fafc; border-radius:6px; font-weight:600; }
+.admin-layout #sidebar .sidebar-content{ margin-top:8px; }
+.admin-layout #page-content{ min-height:100vh; }
+.profile-avatar{ width:40px;height:40px;border-radius:8px;object-fit:cover }
+.profile-avatar-wrapper{ width:48px;height:48px;border-radius:10px;background:#fff;padding:2px; box-shadow:0 1px 6px rgba(0,0,0,0.06); }
+.navbar .dropdown-toggle{ min-height:40px; }
+.navbar .profile-name{ color:#0d6efd; font-weight:600; letter-spacing:0.1px }
+.navbar .profile-email{ color:#6c757d }
+.navbar .dropdown-toggle:hover{ background: rgba(15,23,42,0.02) }
+.bg-gradient{background:linear-gradient(135deg,#4f46e5,#06b6d4)}
+
+@media (max-width: 767px){
+  /* mobile: sidebar is hidden by default and 'open' brings it in view */
+  .admin-layout #sidebar{ position:fixed; z-index:1050; left:-320px; }
+  .admin-layout #sidebar.open{ left:0; width:260px }
+  #page-content{ margin-left:0 }
+}
+
+/* ensure sidebar-content fits and cards do not rotate text */
+.admin-layout #sidebar .sidebar-content .card{ width:100%; box-shadow:none }
+.admin-layout #sidebar .sidebar-content .card .card-body{ white-space:normal; overflow:visible }
+
+/* small-screen layout: avatar only on very small widths */
+@media (max-width: 480px){
+  .navbar .profile-name, .navbar .profile-email { display:none }
+  .profile-avatar-wrapper{ width:40px;height:40px }
+  .profile-avatar{ width:32px;height:32px }
+}
